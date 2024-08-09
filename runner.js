@@ -10,6 +10,7 @@
 // @grant        GM_xmlhttpRequest
 // @run-at       document-start
 // @connect      raw.githubusercontent.com
+// @connect      localhost
 // @downloadURL  https://raw.githubusercontent.com/Olafcio1/Minefart/main/runner.js
 // @updateURL    https://raw.githubusercontent.com/Olafcio1/Minefart/main/runner.js
 // ==/UserScript==
@@ -50,6 +51,11 @@ async function fetch(url, opts = {method: "GET"}) {
     };
 }
 
-fetch("https://raw.githubusercontent.com/Olafcio1/Minefart/main/parser.js").then(async r => {
+const inDev = true;
+const server = inDev ? "http://localhost:2595" : "https://raw.githubusercontent.com/Olafcio1/Minefart/main";
+
+fetch(
+    server + "/parser.js"
+).then(async r => {
     eval(await r.text());
 });
