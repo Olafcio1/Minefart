@@ -51,7 +51,7 @@ async function fetch(url, opts = {method: "GET"}) {
     };
 }
 
-const inDev = true;
+const inDev = false;
 const server = inDev ? "http://localhost:2595" : "https://raw.githubusercontent.com/Olafcio1/Minefart/main";
 
 fetch(

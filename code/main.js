@@ -23,7 +23,7 @@ namespace Minefort {
 };
 
 var observer = new MutationObserver(records => {
-    for (var r : records) {
+    for (records as r) {
         if (r.target.innerText.toLowerCase().includes("your server is almost ready!")) {
             r.target.remove();
             Minefort.Server.getCurrent().start();

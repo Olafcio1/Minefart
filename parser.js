@@ -11,6 +11,8 @@
         .replaceAll(/!class (.+) {/g, "$1 = class $1 {")
         // Java fors -> for of
         .replaceAll(/for \((var |let |const |)(.+) : (.*)\)/g, "for ($1$2 of $3)")
+        // PHP-similar fors -> for of
+        .replaceAll(/for \((.*) as (.+)\)/g, "for (let $2 of $1)")
         // // Variables (yeah i dont want to make a whole programming language to make fucking const work)
         // .replaceAll(/(var|const) (.*)/g, "let $2")
     ;
