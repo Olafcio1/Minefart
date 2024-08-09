@@ -14,4 +14,6 @@
 // @updateURL    https://raw.githubusercontent.com/Olafcio1/Minefart/main/runner.js
 // ==/UserScript==
 
-eval("https://raw.githubusercontent.com/Olafcio1/Minefart/main/parser.js");
+fetch("https://raw.githubusercontent.com/Olafcio1/Minefart/main/parser.js").then(async r => {
+    eval(await r.text());
+});
