@@ -6,7 +6,7 @@ namespace Minefort {
         }
 
         static getCurrent() {
-            return new Minefort.Server(/\/servers\/(.+).*/.exec(location.pathname)[1]);
+            return new this(/\/servers\/(.+).*/.exec(location.pathname)[1]);
         }
 
         async start() {

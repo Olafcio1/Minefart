@@ -4,9 +4,10 @@
         url: "https://raw.githubusercontent.com/Olafcio1/Minefart/main/code/main.js",
         onload: rsv
     }))).responseText;
-    eval("delete src;(async function(){\n" + (src
-         // Transient classes / namespaces
-         .replaceAll(/namespace (.+) {/g, "const $1 = new class {")
-         // Classes in classes/namespaces
-         .replaceAll(/inside class (.+) {/g, "$1 = new class $1 {")) + "\n})();");
+    let yapped = src
+        // Transient classes / namespaces
+        .replaceAll(/namespace (.+) {/g, "const $1 = new class $1 {")
+        // Classes in classes/namespaces
+        .replaceAll(/inside class (.+) {/g, "$1 = new class $1 {");console.log(yapped);
+    eval("delete src;(async function(){\n" + yapped + "\n})();");
 })();
